@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
@@ -24,3 +24,11 @@ class LinkDeleteView(DeleteView):
     
 
 
+def profile_view(request, profile_slug):
+    profile = get_object_or_404(Profile, slug=profile_slug)
+    links = profile.links.all()
+    context ={
+        'profile' : profile,
+        'links' : links
+    }
+    return render(request, 'linksrepo/profile.html', context )
