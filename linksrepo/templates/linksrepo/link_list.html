@@ -34,13 +34,13 @@
                     </a>
                 </td>
                 </td>
-                <td class="px-4 py-3 underline text-blue-600"><a href="{% url 'link-update' link.id %}">Edit</a></td>
-                <td class="px-4 py-3 underline text-red-600"><a href="{% url 'link-delete' link.id %}">Delete</a></td>
+                <td class="px-4 py-3 underline text-blue-600"><a href="{% url 'links-update' link.id %}">Edit</a></td>
+                <td class="px-4 py-3 underline text-red-600"><a href="{% url 'links-delete' link.id %}">Delete</a></td>
             </tr>
         {% endfor %}
       </tbody>
     </table>
-    <a href="{% url 'link-create' %}"> 
+    <a href="{% url 'links-create' %}"> 
         <p class="mt-6 py-2 w-full border rounded border-gray-400 text-center text-gray-500 hover:cursor-pointer hover:bg-gray-100 hover:border-gray-500">
             Add New +
         </p>
